@@ -1,16 +1,23 @@
-import Image from 'next/image'
-
+import './components/styles/home.scss'
+import { Experience } from './components/experience/experience'
+import { Header } from './components/header/Header'
+import { Info } from './components/information/information'
+import { EmailIcon } from './components/icons/email-icon'
+import { SocialBtns } from './components/social-btns/social-btns'
 
 export default function Home() {
   return (
-    <main>
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              width={100}
-              height={24}
-              priority
-            />
+    <main className="container">
+        <Header/>
+        <Experience/>
+        <Info/>
+        <div className="buttons">
+          <SocialBtns/>
+          <a className="btn-primary" href="mailto:teste@gmail.com">
+            contact me
+            <EmailIcon/>
+          </a>
+        </div>
     </main>
   )
 }
